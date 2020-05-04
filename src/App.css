@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+div.fade.in.modal {
+  display:flex !important;
+}
+
+.modal-dialog {
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  width: 40%;
+  background-color: white;
+  padding: 2%;
+  border-width: 3px;
+  border-style: solid;
+  border-color: gainsboro;
+  border-radius: 10px;
+  background-color: white;
+  transform: translateY(-50%);
+}
