@@ -1,8 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Calendar APP
 
 Callendar APP is UI that allows to add reminder to a Calendar.
+Install the dependencis with:
+```
+npm i
+```
 To start  run it type
 ```
 npm start
