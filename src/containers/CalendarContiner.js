@@ -1,5 +1,4 @@
 import {connect} from 'react-redux'
-import {increaseMonth, decreaseMonth} from "../actions/actions";
 import Calendar from '../components/Calendar'
 
 export const mapStateToProps = (state) => ({

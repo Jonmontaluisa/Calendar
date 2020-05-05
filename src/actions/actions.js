@@ -8,6 +8,11 @@ export const REMOVE_REMINDER_FROM_DAY = 'REMOVE_REMINDER_FROM_DAY'
 export const ADD_REMINDER_TO_DAY = 'ADD_REMINDER_TO_DAY'
 export const INCREASE_MONTH = 'INCREASE_MONTH'
 export const DECREASE_MONTH = 'DECREASE_MONTH'
+export const SHOW_MODAL = 'SHOW_MODAL'
+
+export function showModal() {
+    return { type: SHOW_MODAL }
+}
 
 export function createReminder(reminder) {
     return { type: CREATE_REMINDER , reminder}

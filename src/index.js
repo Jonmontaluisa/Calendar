@@ -9,7 +9,6 @@ import { Provider } from 'react-redux'
 
 const initialState = {showModalReminder: false, month:4, reminders: {}};
 const store = createStore(rootReducer, initialState);
-const unsubscribe = store.subscribe(() => console.log('storestate',store.getState()));
 
 ReactDOM.render(
   <Provider store={store}>

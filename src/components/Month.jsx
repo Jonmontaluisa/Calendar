@@ -15,7 +15,6 @@ class Month extends React.Component {
     render() {
 
         const sundays = sundaysOfGrid(this.props.month);
-        console.log('MONTH', sundays)
         const reminders = this.props.reminders;
         const remindersList = Object.values(reminders);
         const sorted = sortRemindersInWeeklyPeriods(remindersList, this.props.month);

@@ -4,6 +4,7 @@ import ReminderModal from "../containers/ReminderModalContainer";
 import {firstSundayOfGridBy, getMonthVerboseBy} from "../utils/utils";
 import NextMonthButton from "../containers/NextMonthButton";
 import PreviousMonthButton from "../containers/PreviousMonthButtonContainer";
+import AddReminderButton from "../containers/AddReminderButtonContainer";
 
 const calendarStyle = {
     height: '100vh',

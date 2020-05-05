@@ -4,7 +4,6 @@ import {
 }from '../actions/actions'
 
 const month = (state = 4 , action) => {
-    console.log('STATE', state);
     switch(action.type){
         case INCREASE_MONTH:
             return state + 1;

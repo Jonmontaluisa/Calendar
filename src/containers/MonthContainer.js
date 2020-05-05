@@ -9,7 +9,7 @@ export const mapStateToProps = (state) => ({
 
 
 const mapDispatchToProps = (dispatch) => ({
-    dispatchReminder: (rem) => dispatch(createReminder(rem))
+    dispatchReminder: (rem) => dispatch(createReminder(rem)),
 })
 
 export default connect(
