@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
-import Calendar from "./components/Calendar";
-import ReminderModal from './components/ReminderModal';
-
+import Calendar from "./containers/CalendarContiner";
 
 function App() {
 

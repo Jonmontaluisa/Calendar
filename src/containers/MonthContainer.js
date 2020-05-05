@@ -3,7 +3,8 @@ import {createReminder} from "../actions/actions";
 import Month from '../components/Month'
 
 export const mapStateToProps = (state) => ({
-    reminders: state.reminders
+    reminders: state.reminders,
+    month: state.month
 })
 
 

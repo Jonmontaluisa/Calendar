@@ -59,7 +59,6 @@ const sortRemindersInDailyPeriods = (remindersList, startDate) => {
 }
 
 const periodSorter = (remindersList, startDate, totalDaysInRange, period) => {
-
     let sortedArray = [];
     let i = 0;
     while (i < totalDaysInRange) {
@@ -102,6 +101,25 @@ const getMonthVerboseBy = (number) => {
     ];
     return month[number];
 }
+
+const textShorterThan = (text, maxLength) => {
+    return text.length <= maxLength;
+}
+
+const sundaysOfGrid = (month) => {
+    let sundays = [];
+    const period = 7;
+    let startDate = firstSundayOfGridBy(month);
+    let endDate = lastSaturdayOfGridBy(month);
+    let nexToEndDate = addDays(endDate, 1);
+    let daysInRange = daysBetween(startDate, nexToEndDate)
+    let i = 0;
+    while( i < daysInRange){
+        sundays.push(addDays(startDate,i));
+        i+=7;
+    }
+    return sundays;
+}
 export {
     addDays,
     inBetween,
@@ -113,5 +131,7 @@ export {
     sortRemindersInDailyPeriods,
     uniqueID,
     sortByDate,
-    getMonthVerboseBy
+    getMonthVerboseBy,
+    textShorterThan,
+    sundaysOfGrid
 }

@@ -15,32 +15,18 @@ class Week extends React.Component {
         // this.handleClick = this.handleClick.bind(this);
     }
 
-    sunday = this.props.sunday;
-
-    week = {
-        sunday: this.props.sunday,
-        monday:addDays(this.sunday,1),
-        tuesday: addDays(this.sunday,2),
-        wednesday: addDays(this.sunday,3),
-        thursday: addDays(this.sunday,4),
-        friday: addDays(this.sunday,5),
-        saturday: addDays(this.sunday,6)
-    };
-    daysList = [
-      this.week.sunday,
-      this.week.monday,
-      this.week.tuesday,
-      this.week.wednesday,
-      this.week.thursday,
-      this.week.friday,
-      this.week.saturday
-    ];
-
-
-
     render() {
+        const daysList = [
+            this.props.sunday,
+            addDays(this.props.sunday, 1),
+            addDays(this.props.sunday, 2),
+            addDays(this.props.sunday, 3),
+            addDays(this.props.sunday, 4),
+            addDays(this.props.sunday, 5),
+            addDays(this.props.sunday, 6)
+        ];
         const sortedRemindersByDay = sortRemindersInDailyPeriods( this.props.reminders, this.props.sunday);
-        const days = sortedRemindersByDay.map((dailyReminders, index)=> <Day day={this.daysList[index]} reminders={dailyReminders}></Day>)
+        const days = sortedRemindersByDay.map((dailyReminders, index)=> <Day day={daysList[index]} reminders={dailyReminders}></Day>)
 
         return (
             <div style={weekStyle} >

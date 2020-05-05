@@ -1,8 +1,7 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
-import {createReminder} from "../actions/actions";
 import PropTypes from 'prop-types';
-import {uniqueID} from "../utils/utils";
+import {uniqueID, textShorterThan} from "../utils/utils";
 
 const entryStyle = {
     height: '20px',
@@ -35,11 +34,9 @@ class ReminderModal extends React.Component {
     showModal = () => { this.setState({isOpen: true})} ;
 
     hideModal = () => { this.setState( {isOpen:false})}
+
     handleSubmit(event){
-
-        console.log('statemodal',this.state)
         event.preventDefault();
-
         if(!this.validateReminderLength()){
             return false;
         }else{
@@ -52,8 +49,6 @@ class ReminderModal extends React.Component {
             });
             this.hideModal();
         }
-
-
     }
     handleChangeCity(event) {
         this.setState({city: event.target.value});
@@ -62,10 +57,11 @@ class ReminderModal extends React.Component {
     handleChangeReminder(event) {
         this.setState({reminder: event.target.value});
     }
+
      handleChangeDate (event) {
-        console.log('===>',event.target.value);
         this.setState({date: event.target.value});
      }
+
     handleChangeTime(event) {
         this.setState({time: event.target.value});
     }
@@ -73,8 +69,9 @@ class ReminderModal extends React.Component {
     handleChangeColor(event) {
         this.setState({color: event.target.value});
     }
+
     validateReminderLength() {
-        if (this.state.reminder.length >30){
+        if (!textShorterThan(this.state.reminder, 30)){
             alert('Reminder must be shorter than 30 characters');
             return false;
         }

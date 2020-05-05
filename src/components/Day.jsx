@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import ReminderList from "./RemiderList";
 
 const Wrapper = styled.div`
-    background: ${props =>  props.color ? props.color : "white" };
+    background: ${props => props.color ? props.color : "white"};
     `;
 const dayStyle = {
     borderStyle: 'solid',
@@ -11,30 +11,24 @@ const dayStyle = {
     borderWidth: '0.5px',
     width: '14.29%',
 }
-class Day extends React.Component {
 
+class Day extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-        console.log('I have been clicked');
     }
 
     render() {
         const day = this.props.day;
         const todayNumber = day.getDate();
         return (
-            <div role={'button'} style={dayStyle} >
+            <div role={'button'} style={dayStyle}>
                 <Wrapper color={this.props.color}>
                     <div>{todayNumber}</div>
                 </Wrapper>
                 <ReminderList remindersList={this.props.reminders}></ReminderList>
             </div>
-
         );
     }
 }
 
-export  default Day;
+export default Day;

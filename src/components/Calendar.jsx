@@ -2,6 +2,8 @@ import * as React from "react";
 import Month from "../containers/MonthContainer";
 import ReminderModal from "../containers/ReminderModalContainer";
 import {firstSundayOfGridBy, getMonthVerboseBy} from "../utils/utils";
+import NextMonthButton from "../containers/NextMonthButton";
+import PreviousMonthButton from "../containers/PreviousMonthButtonContainer";
 
 const calendarStyle = {
     height: '100vh',
@@ -24,19 +26,20 @@ class Calendar extends React.Component {
     constructor(props) {
         super(props);
     }
-    month =4
-    monthVerbose = getMonthVerboseBy(4);
-    firstSunday = firstSundayOfGridBy(this.month);
+
     render() {
+        const monthVerbose = getMonthVerboseBy(this.props.month);
+        const firstSunday = firstSundayOfGridBy(this.props.month);
         return (
             <div style={calendarStyle}>
                 <div style={calenderTitleStyle}>
-                    <div style={titleStyle}><h2>{this.monthVerbose}</h2></div>
+                    <div style={titleStyle}><h2>{monthVerbose}</h2></div>
                     <ReminderModal/>
-                    <button style={buttonStyle}>create a new Reminder</button>
+                    <PreviousMonthButton/>
+                    <NextMonthButton/>
                 </div>
 
-                <Month firstSunday={this.firstSunday} reminders = {[]} month={this.month} />
+                <Month firstSunday={firstSunday} reminders = {[]} month={this.props.month} />
             </div>
 
         );
